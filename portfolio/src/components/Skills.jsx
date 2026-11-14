@@ -1,41 +1,24 @@
 import '../assets/styles/Skills.css'
+import { skillCategories } from '../data/portfolioData'
 
 function Skills() {
-  const skillCategories = [
-    {
-      title: 'Languages',
-      skills: ['Python', 'HTML', 'CSS', 'JavaScript', 'LUA']
-    },
-    {
-      title: 'Frameworks & Libraries',
-      skills: ['React', 'Tkinter', 'PyAutoGUI', 'OpenCV', 'yt-dlp']
-    },
-    {
-      title: 'Tools & Technologies',
-      skills: ['Git', 'GitHub', 'VSC', 'Vite', 'AutoHotKey', 'Automation']
-    },
-    {
-      title: 'Soft SKills',
-      skills: ['Team Leadership', 'Problem Solving', 'Communication', 'Adaptability']
-    }
-  ]
-
-  return(
-    <section id='skills' className='skills'>
+  return (
+    <section id='skills' className='skills' aria-label='Technical and Professional Skills'>
       <div className='container'>
-        <h2>Skills</h2>
+        <h2 className='section-title'>Technical &amp; Engineering Skills</h2>
         <div className='skills-grid'>
-          {skillCategories.map((category, index) => (
-            <div key={index} className='skill-category'>
+          {skillCategories.map((category) => (
+            <div key={category.id} className='skill-category'>
               <h3>{category.title}</h3>
               <div className='skills-list'>
-                {category.skills.map((skill, i) => (
-                  <span key={i} className='skill-tag'>{skill}</span>
+                {category.skills.map((skill) => (
+                  <span key={skill} className='skill-tag'>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
           ))}
-        
         </div>
       </div>
     </section>

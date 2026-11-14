@@ -1,6 +1,7 @@
 import '../assets/styles/Header.css'
 import useTheme from '../hooks/useTheme'
 import { FaSun, FaMoon } from 'react-icons/fa'
+import { personalInfo } from '../data/portfolioData'
 
 function Header() {
   const { theme, toggleTheme } = useTheme()
@@ -8,15 +9,19 @@ function Header() {
   return (
     <header className='header'>
       <div className='container'>
-        <h1 className='logo'>Jordi Saucedo</h1>
-        <nav className='navbar'>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+        <a href='#' className='logo-link' aria-label={`${personalInfo.name} Home`}>
+          <span className='logo'>{personalInfo.name}</span>
+        </a>
+        <nav className='navbar' aria-label='Primary Navigation'>
+          <a href='#about'>About</a>
+          <a href='#projects'>Projects</a>
+          <a href='#skills'>Skills</a>
+          <a href='#contact'>Contact</a>
           <button
             className='theme-toggle'
             onClick={toggleTheme}
-            aria-label='Toggle theme'
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            type='button'
           >
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>

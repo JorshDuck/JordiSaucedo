@@ -1,10 +1,15 @@
 import '../assets/styles/Footer.css'
+import { personalInfo } from '../data/portfolioData'
 
 function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className='footer'>
+    <footer className='footer' aria-label='Site Footer'>
       <div className='container'>
-        <p>© 2026 Jordi Saucedo. Build with React</p>
+        <p>
+          &copy; {currentYear} {personalInfo.name}. Built with React &amp; Vite.
+        </p>
       </div>
     </footer>
   )
