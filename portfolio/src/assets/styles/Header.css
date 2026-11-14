@@ -1,0 +1,32 @@
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  background: transparent;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(50deg, var(--accent), var(--accent-hover));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-secundary);
+  margin-left: 35px;
+  transition: color 0.35s;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
